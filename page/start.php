@@ -1,17 +1,15 @@
-<?php
-	header('Content-type:text/html; charset=utf-8');
-	// 开启Session
-	session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <meta charset="utf-8">
   <meta name="renderer" content="webkit"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <link rel="shortcut icon" href="favicon.ico"  type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://cdn.staticfile.org/mdui/0.4.1/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="./static/css/style.css">
   <title></title>
 </head>

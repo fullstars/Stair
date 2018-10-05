@@ -14,12 +14,12 @@
 			header('refresh:3; url=index.php');
 			echo "用户名或密码不能为空,系统将在3秒后跳转到登录界面,请重新填写登录信息!";
 			exit;
-		} elseif (($username != 'username') || ($password != 'password')) {
+		} elseif (($username != 'admin') || ($password != 'admin')) {
 			# 用户名或密码错误,同空的处理方式
 			header('refresh:3; url=index.php');
 			echo "用户名或密码错误,系统将在3秒后跳转到登录界面,请重新填写登录信息!";
 			exit;
-		} elseif (($username = 'username') && ($password = 'password')) {
+		} elseif (($username = 'admin') && ($password = 'admin')) {
 			# 用户名和密码都正确,将用户信息存到Session中
 			$_SESSION['username'] = $username;
 			$_SESSION['islogin'] = 1;
