@@ -3,7 +3,7 @@
 	//载入配置文件
 	include_once("./config.php");
 	//载入类
-	include_once("./functions/class1.php");
+	include_once("./functions/class.php");
 	@$admin = $_GET['admin'];
 	//获取当前目录
 	$thedir = __DIR__;
@@ -176,39 +176,39 @@
 							    <a href="<?php echo $url ?>" id = "url<?php echo $i; ?>"><i class="<?php echo $ico; ?>"></i> <?php echo $showdir; ?></a>
 							    <?php } ?>
 						    </td>
-						    <td id = "info" class = "layui-hide-xs">
+						    <td id = "info" class = "mdui-hide-xs">
 							    <!--如果是readme.md-->
 							    <?php if(($showdir == 'README.md') || ($showdir == 'readme.md')){ ?>
-								<a class = "layui-btn layui-btn-xs" href="javascript:;" onclick = "viewmd('<?php echo $url ?>')" title = "点此查看使用说明">使用说明</a>
+								<a class = "mdui-btn mdui-btn-dense" href="javascript:;" onclick = "viewmd('<?php echo $url ?>')" dui-tooltip="{content: '点击查看使用说明'}">使用说明</a>
 								<!--视频播放器-->
 							    <?php }elseif($zdir->video($url)){
 
 							    ?>
-								<a class = "layui-btn layui-btn-xs" href="javascript:;" onclick = "video('<?php echo $url ?>')">播放</a>
+								<a class = "mdui-btn mdui-btn-dense" href="javascript:;" onclick = "video('<?php echo $url ?>')">播放</a>
 								<!--文档查看器-->
 							    <?php }elseif($zdir->is_text($url)){
 							    ?>
-								<a class = "layui-btn layui-btn-xs" href="javascript:;" onclick = "viewtext('<?php echo $fullpath; ?>')">查看</a>
+								<a class = "mdui-btn mdui-btn-dense" href="javascript:;" onclick = "viewtext('<?php echo $fullpath; ?>')">查看</a>
 							    <?php } ?>
 							    <!--如果是文件-->
 							    <?php if($type == 'file'){ ?>
-									<a href="javascript:;" title = "查看文件hash" onclick = "filehash('<?php echo $showdir; ?>','<?php echo $fullpath; ?>')"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-									<a href="javascript:;" onclick = "qrcode('<?php echo $showdir; ?>','<?php echo $url; ?>')" title = "显示二维码"><i class="fa fa-qrcode" aria-hidden="true"></i></a>
+									<a href="javascript:;" mdui-tooltip="{content: '查看文件hash'}" onclick = "filehash('<?php echo $showdir; ?>','<?php echo $fullpath; ?>')"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+									<a href="javascript:;" onclick = "qrcode('<?php echo $showdir; ?>','<?php echo $url; ?>')" mdui-tooltip="{content: '显示二维码'}"><i class="fa fa-qrcode" aria-hidden="true"></i></a>
 							    <?php } ?>
 						    </td>
-						    <td class = "layui-hide-xs"><?php echo $ctime; ?></td>
+						    <td class = "mdui-hide-xs"><?php echo $ctime; ?></td>
 						    <td><?php echo $fsize; ?></td>
-						    <td class = "layui-hide-xs">
+						    <td class = "mdui-hide-xs">
 							    <?php if($fsize != '-'){ ?>
-								<a href="javascript:;" class = "layui-btn layui-btn-xs" onclick = "copy('<?php echo $url ?>')">复制</a>
+								<a href="javascript:;" class = "mdui-btn mdui-btn-dense" onclick = "copy('<?php echo $url ?>')">复制</a>
 							    <?php } ?>
 							    <!--如果是管理模式-->
 							    <?php if((isset($admin)) && ($fsize != '-')) { ?>
-									<a href="javascript:;" class = "layui-btn layui-btn-xs layui-btn-danger" onclick = "delfile(<?php echo $i; ?>,'<?php echo $showdir; ?>','<?php echo $fullpath; ?>')">删除</a>
+									<a href="javascript:;" class = "mdui-btn mdui-btn-dense mdui-btn-danger" onclick = "delfile(<?php echo $i; ?>,'<?php echo $showdir; ?>','<?php echo $fullpath; ?>')">删除</a>
 							    <?php } ?>
 							    <!--如果是markdown文件-->
 							    <?php if(($suffix == 'md') && ($suffix != null)){ ?>
-								&nbsp;&nbsp;<a href="javascript:;" onclick = "viewmd('<?php echo urlencode($url); ?>')" title = "点击查看"><i class="fa fa-eye fa-lg"></i></a> 
+								&nbsp;&nbsp;<a href="javascript:;" onclick = "viewmd('<?php echo urlencode($url); ?>')" mdui-tooltip="{content: '点击查看'}"><i class="fa fa-eye fa-lg"></i></a> 
 							    <?php } ?>
 						    </td>
 					    </tr>

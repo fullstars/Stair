@@ -2,14 +2,15 @@
     <div  id="content-main">
     <P>当前位置：首页</p>
     </div>
-	-->
+	
 
-    <!-- 尾部
+    尾部
     <div class="mdui-color-theme" id="content-footer">Copyright</div>
 	-->
 
 </body>
 <script src="https://cdn.staticfile.org/mdui/0.4.1/js/mdui.min.js"></script>
+<script>var $$ = mdui.JQ;</script>
 <script src="./static/js/theme.js"></script>
 </html>
 
