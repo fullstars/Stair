@@ -89,7 +89,8 @@
             </tr>
           </thead>
 		  <tbody>
-					    <?php foreach( $listdir as $showdir ) {
+						<?php opendir(upload);
+						    foreach( $listdir as $showdir ) {
 						    //防止中文乱码
 						    //$showdir = iconv('gb2312' , 'utf-8' , $showdir );
 						    $fullpath = $thedir.'/'.$dir.'/'.$showdir;
